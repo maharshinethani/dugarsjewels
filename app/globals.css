@@ -1,0 +1,458 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   OCEAN MIDNIGHT — Dark Theme (default)
+   ============================================================ */
+@layer base {
+  :root,
+  [data-theme='ocean-midnight'] {
+    /* Raw palette */
+    --ocean-deep: 203 64% 10%;          /* #061D2B */
+    --ocean-dark: 200 69% 13%;          /* #082A3A */
+    --ocean-card: 201 63% 17%;          /* #103649 */
+    --ocean-elevated: 199 62% 21%;      /* #164358 */
+    --ocean-input: 199 64% 14%;         /* #0B2B3A */
+
+    --gold: 39 53% 63%;                 /* #D4AF69 */
+    --gold-light: 41 70% 76%;           /* #E8CD91 */
+    --gold-dark: 39 45% 47%;            /* #B89455 */
+    --gold-deep: 35 40% 33%;            /* readable gold on light bg */
+
+    --ivory: 43 25% 95%;                /* #F8F6F0 */
+    --soft-black: 203 30% 6%;           /* near-black blue */
+
+    /* Semantic typography */
+    --heading: 43 25% 95%;              /* #F8F6F0 ivory */
+    --body: 199 22% 87%;               /* #D4DFE5 */
+    --secondary-text: 200 18% 75%;     /* #A8BAC4 */
+    --muted-text: 200 14% 62%;         /* readable muted */
+    --champagne: 41 70% 76%;           /* #E8CD91 */
+    --gold-accent: 39 53% 63%;         /* #D4AF69 */
+    --on-dark: 43 25% 95%;             /* always-light text for dark overlays */
+
+    /* Surface tokens */
+    --background: var(--ocean-deep);
+    --foreground: var(--body);
+    --card: var(--ocean-card);
+    --card-foreground: var(--body);
+    --popover: var(--ocean-card);
+    --popover-foreground: var(--body);
+    --primary: var(--gold);
+    --primary-foreground: var(--soft-black);
+    --secondary: 200 50% 16%;
+    --secondary-foreground: var(--body);
+    --muted: var(--ocean-dark);
+    --muted-foreground: var(--secondary-text);
+    --accent: var(--gold);
+    --accent-foreground: var(--soft-black);
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 43 25% 95%;
+    --border: 39 53% 63%;
+    --input: var(--ocean-input);
+    --ring: var(--gold);
+
+    /* Button semantic tokens */
+    --btn-gold-bg: var(--gold);
+    --btn-gold-text: var(--soft-black);
+    --btn-gold-hover-bg: var(--gold-light);
+    --btn-gold-hover-text: var(--soft-black);
+    --btn-outline-text: var(--gold);
+    --btn-outline-hover-bg: var(--gold);
+    --btn-outline-hover-text: var(--soft-black);
+    --btn-emerald-bg: var(--ocean-elevated);
+    --btn-emerald-text: var(--body);
+    --btn-emerald-hover-bg: 200 55% 24%;
+    --btn-emerald-hover-text: var(--body);
+
+    /* Blue accent */
+    --blue-accent: 201 57% 32%;         /* #246580 */
+
+    /* Marquee */
+    --marquee-bg: var(--ocean-dark);
+    --marquee-text: var(--gold-light);
+    --marquee-separator: var(--gold);
+    --marquee-border: 39 53% 63%;
+
+    /* Water texture overlay */
+    --water-overlay: linear-gradient(
+      135deg,
+      rgba(8, 42, 58, 0.4) 0%,
+      rgba(6, 29, 43, 0.6) 50%,
+      rgba(16, 54, 73, 0.4) 100%
+    );
+    --water-ripple: radial-gradient(ellipse at 30% 20%, rgba(36, 101, 128, 0.15), transparent 60%),
+                    radial-gradient(ellipse at 70% 80%, rgba(22, 67, 88, 0.2), transparent 50%);
+
+    --chart-1: var(--gold);
+    --chart-2: var(--gold-light);
+    --chart-3: var(--ivory);
+    --chart-4: 201 40% 25%;
+    --chart-5: var(--soft-black);
+
+    --radius: 0.25rem;
+    --surface-elevated: var(--ocean-elevated);
+  }
+
+  /* ============================================================
+     OCEAN PEARL — Light Theme
+     ============================================================ */
+  [data-theme='ocean-pearl'] {
+    /* Raw palette */
+    --ocean-deep: 203 64% 10%;
+    --ocean-dark: 200 69% 13%;
+    --ocean-card: 0 0% 100%;            /* #FFFFFF */
+    --ocean-elevated: 200 43% 97%;      /* #F5F7F8 */
+    --ocean-input: 40 20% 95%;          /* ivory input */
+
+    --gold: 39 53% 63%;                 /* #D4AF69 */
+    --gold-light: 41 70% 76%;           /* #E8CD91 */
+    --gold-dark: 39 45% 47%;
+    --gold-deep: 33 58% 23%;            /* #79551F readable gold text */
+
+    --ivory: 43 25% 95%;                /* #F8F6F0 */
+    --soft-black: 203 30% 6%;
+
+    /* Semantic typography */
+    --heading: 205 47% 15%;             /* #102B3A deep ocean */
+    --body: 207 24% 26%;               /* #344550 */
+    --secondary-text: 205 13% 40%;     /* #586A73 */
+    --muted-text: 205 10% 55%;
+    --champagne: 33 58% 23%;           /* dark gold for readability */
+    --gold-accent: 33 58% 23%;         /* dark gold accent on light */
+    --on-dark: 43 25% 95%;             /* still used on photo overlays */
+
+    /* Surface tokens */
+    --background: 43 25% 95%;           /* #F8F6F0 ivory */
+    --foreground: var(--body);
+    --card: 0 0% 100%;                  /* #FFFFFF */
+    --card-foreground: var(--body);
+    --popover: 0 0% 100%;
+    --popover-foreground: var(--body);
+    --primary: 205 57% 26%;            /* deep blue primary */
+    --primary-foreground: 43 25% 95%;  /* ivory text on blue */
+    --secondary: 40 16% 91%;           /* #F0ECE3 */
+    --secondary-foreground: var(--body);
+    --muted: 200 30% 94%;
+    --muted-foreground: var(--secondary-text);
+    --accent: var(--gold);
+    --accent-foreground: var(--soft-black);
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 43 25% 95%;
+    --border: 40 16% 86%;              /* #DCD6C9 */
+    --input: var(--ocean-input);
+    --ring: var(--gold);
+
+    /* Button semantic tokens — light theme */
+    --btn-gold-bg: 205 57% 26%;        /* deep blue primary */
+    --btn-gold-text: 43 25% 95%;       /* ivory */
+    --btn-gold-hover-bg: 205 57% 20%;  /* darker blue */
+    --btn-gold-hover-text: 43 25% 95%;
+    --btn-outline-text: 205 47% 15%;   /* deep ocean text */
+    --btn-outline-hover-bg: var(--gold); /* gold hover */
+    --btn-outline-hover-text: var(--soft-black);
+    --btn-emerald-bg: var(--ocean-elevated);
+    --btn-emerald-text: var(--body);
+    --btn-emerald-hover-bg: 200 30% 90%;
+    --btn-emerald-hover-text: var(--body);
+
+    /* Blue accent */
+    --blue-accent: 203 54% 33%;        /* #246580 */
+
+    /* Marquee */
+    --marquee-bg: var(--ocean-deep);
+    --marquee-text: var(--gold-light);
+    --marquee-separator: var(--gold);
+    --marquee-border: 39 53% 63%;
+
+    /* Water texture overlay — light */
+    --water-overlay: linear-gradient(
+      135deg,
+      rgba(248, 246, 240, 0.6) 0%,
+      rgba(230, 240, 245, 0.4) 50%,
+      rgba(245, 247, 248, 0.6) 100%
+    );
+    --water-ripple: radial-gradient(ellipse at 30% 20%, rgba(36, 101, 128, 0.08), transparent 60%),
+                    radial-gradient(ellipse at 70% 80%, rgba(120, 180, 200, 0.06), transparent 50%);
+
+    --chart-1: 205 57% 26%;
+    --chart-2: var(--gold);
+    --chart-3: var(--blue-accent);
+    --chart-4: 40 16% 70%;
+    --chart-5: var(--secondary-text);
+
+    --radius: 0.25rem;
+    --surface-elevated: var(--ocean-elevated);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    overflow-x: hidden;
+  }
+
+  body {
+    @apply bg-background text-body;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    transition: background-color 250ms ease, color 250ms ease;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: hsl(var(--heading));
+  }
+
+  a {
+    color: inherit;
+  }
+}
+
+@layer components {
+  .container-luxury {
+    @apply mx-auto w-full max-w-[1600px] px-4 sm:px-6 lg:px-8 xl:px-12;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .gold-line {
+    @apply h-px w-full;
+    background: linear-gradient(90deg, transparent, hsl(var(--gold)), transparent);
+  }
+
+  .gold-text {
+    color: hsl(var(--gold-accent));
+  }
+
+  .heading-serif {
+    @apply font-serif font-light leading-[1.15] tracking-tight;
+    color: hsl(var(--heading));
+    font-size: clamp(1.5rem, 4vw, 3rem);
+  }
+
+  .label-luxury {
+    @apply text-[10px] font-medium uppercase tracking-[0.25em];
+    color: hsl(var(--secondary-text));
+  }
+
+  /* Buttons */
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 text-xs font-medium uppercase tracking-[0.15em] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed sm:px-8 sm:py-3.5 sm:tracking-[0.2em];
+    background-color: hsl(var(--btn-gold-bg));
+    color: hsl(var(--btn-gold-text));
+  }
+  .btn-gold:hover:not(:disabled),
+  .btn-gold:active:not(:disabled) {
+    background-color: hsl(var(--btn-gold-hover-bg));
+    color: hsl(var(--btn-gold-hover-text));
+  }
+  .btn-gold:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+
+  .btn-outline-gold {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 text-xs font-medium uppercase tracking-[0.15em] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed sm:px-8 sm:py-3.5 sm:tracking-[0.2em];
+    background-color: transparent;
+    color: hsl(var(--btn-outline-text));
+    border: 1px solid hsl(var(--btn-outline-text) / 0.5);
+  }
+  .btn-outline-gold:hover:not(:disabled),
+  .btn-outline-gold:active:not(:disabled) {
+    background-color: hsl(var(--btn-outline-hover-bg));
+    color: hsl(var(--btn-outline-hover-text));
+    border-color: hsl(var(--btn-outline-hover-bg));
+  }
+  .btn-outline-gold:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+
+  .btn-emerald {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 text-xs font-medium uppercase tracking-[0.15em] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed sm:px-8 sm:py-3.5 sm:tracking-[0.2em];
+    background-color: hsl(var(--btn-emerald-bg));
+    color: hsl(var(--btn-emerald-text));
+  }
+  .btn-emerald:hover:not(:disabled),
+  .btn-emerald:active:not(:disabled) {
+    background-color: hsl(var(--btn-emerald-hover-bg));
+    color: hsl(var(--btn-emerald-hover-text));
+  }
+  .btn-emerald:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+
+  .marquee-strip {
+    background: hsl(var(--marquee-bg));
+    color: hsl(var(--marquee-text));
+    border-bottom: 1px solid hsl(var(--marquee-border) / 0.25);
+  }
+
+  .marquee-text {
+    color: hsl(var(--marquee-text));
+  }
+
+  .marquee-separator {
+    color: hsl(var(--marquee-separator));
+  }
+
+  /* Water texture backgrounds */
+  .water-texture {
+    background-image: var(--water-ripple), var(--water-overlay);
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  .water-texture-section {
+    position: relative;
+  }
+  .water-texture-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: var(--water-ripple);
+    background-size: cover;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .water-texture-section > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .water-hero-overlay {
+    background: linear-gradient(
+      180deg,
+      hsl(var(--background) / 0.3) 0%,
+      hsl(var(--background) / 0.5) 50%,
+      hsl(var(--background) / 0.85) 100%
+    );
+  }
+}
+
+@layer utilities {
+  .text-shadow-luxury {
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .aspect-portrait {
+    aspect-ratio: 3 / 4;
+  }
+
+  .aspect-square-luxury {
+    aspect-ratio: 1 / 1;
+  }
+
+  .announcement-track {
+    animation: announcement-scroll 34s linear infinite;
+  }
+
+  .direction-rtl {
+    direction: rtl;
+  }
+
+  .touch-actions {
+    @apply lg:translate-y-full lg:group-hover:translate-y-0;
+    transform: translateY(0);
+  }
+}
+
+@keyframes announcement-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* RTL Support */
+[dir="rtl"] {
+  font-family: var(--font-arabic), 'Noto Kufi Arabic', sans-serif;
+}
+
+[dir="rtl"] body {
+  font-family: var(--font-arabic), 'Noto Kufi Arabic', sans-serif;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .announcement-track {
+    animation-play-state: paused !important;
+  }
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+  background: hsl(var(--background));
+}
+
+/* Selection */
+::selection {
+  background: hsl(var(--gold));
+  color: hsl(var(--soft-black));
+}
+
+.theme-toast {
+  background: hsl(var(--card)) !important;
+  color: hsl(var(--card-foreground)) !important;
+  border: 1px solid hsl(var(--gold) / 0.3) !important;
+  border-radius: 2px !important;
+}
+/* Swiper Coverflow Exact Style */
+.collections-coverflow-slider .swiper-slide {
+  opacity: 0.7; /* Side cards slightly translucent like the image */
+  transform: scale(0.82);
+  transition: all 0.4s ease-in-out;
+}
+
+.collections-coverflow-slider .swiper-slide-active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 30; /* Active card stays in front */
+}
+
+/* Pagination Dots */
+.collections-coverflow-slider .swiper-pagination {
+  position: relative !important;
+  margin-top: 20px;
+}
+
+.collections-coverflow-slider .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: #c5a880;
+  opacity: 0.4;
+  transition: all 0.3s ease;
+}
+
+.collections-coverflow-slider .swiper-pagination-bullet-active {
+  opacity: 1;
+  width: 20px;
+  border-radius: 4px;
+  background: #b38b4d;
+}
